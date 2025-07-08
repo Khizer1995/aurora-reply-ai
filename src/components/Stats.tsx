@@ -9,13 +9,21 @@ export const Stats = () => {
   return (
     <section className="py-20 px-6">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Divider before stats */}
+        <div className="divider mb-16"></div>
+
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 text-center">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2">
-                {stat.number}
+            <div key={index} className="flex items-center">
+              <div>
+                <div className="text-3xl md:text-4xl font-light text-white mb-1 geist-font tracking-tight">
+                  {stat.number}
+                </div>
+                <div className="text-gray-400 text-sm inter-font font-normal">{stat.label}</div>
               </div>
-              <div className="text-white/70 text-lg">{stat.label}</div>
+              {index < stats.length - 1 && (
+                <div className="hidden sm:block vertical-divider h-12 ml-8"></div>
+              )}
             </div>
           ))}
         </div>

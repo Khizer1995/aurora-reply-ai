@@ -1,44 +1,47 @@
 
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
+import { Play, ChevronDown } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="pt-32 pb-20 px-6">
-      <div className="container mx-auto text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight">
-          Automated Email Replies.
-          <br />
-          <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-            Powered by AI.
-          </span>
-          <br />
-          <span className="text-white/90">
-            Backed by your knowledge.
-          </span>
-        </h1>
-        
-        <p className="text-xl md:text-2xl text-white/70 mb-12 max-w-4xl mx-auto leading-relaxed">
-          AutoReply reads your emails, analyzes your documents, and sends intelligent, 
-          context-aware replies — all in seconds.
-        </p>
+    <section className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center px-6 py-20">
+      <div className="max-w-6xl mx-auto text-center">
+        {/* Main Heading */}
+        <div className="mb-8 float-animation">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-[1.1] geist-font tracking-tight">
+            Automated Email Replies.
+            <br />
+            <span className="gradient-text block tracking-tight">
+              Powered by AI.
+            </span>
+            <br />
+            <span className="text-white/90">
+              Backed by your knowledge.
+            </span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed inter-font font-normal">
+            AutoReply reads your emails, analyzes your documents, and sends intelligent, 
+            context-aware replies — all in seconds.
+          </p>
+        </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button 
-            size="lg" 
-            className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-0 px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-          >
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <button className="primary-button px-8 py-6 text-white rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 inter-font">
             Try it Free
-          </Button>
-          
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="backdrop-blur-md bg-white/10 border-white/20 text-white hover:bg-white/20 px-8 py-6 text-lg font-semibold transition-all duration-300"
-          >
+          </button>
+          <button className="secondary-button px-8 py-6 rounded-lg text-white font-semibold text-lg transition-all duration-300 inter-font flex items-center">
             <Play className="mr-2 h-5 w-5" />
             See it in Action
-          </Button>
+          </button>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400">
+        <div className="flex flex-col items-center">
+          <span className="text-sm mb-2 inter-font font-normal">Discover More</span>
+          <ChevronDown className="h-4 w-4 animate-bounce" />
         </div>
       </div>
     </section>

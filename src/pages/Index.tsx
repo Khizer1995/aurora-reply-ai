@@ -11,7 +11,7 @@ import { AuroraBackground } from "@/components/AuroraBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-slate-950 text-white overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <AuroraBackground />
       <div className="relative z-10">
         <Navigation />

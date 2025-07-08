@@ -3,8 +3,8 @@ export const Testimonials = () => {
   return (
     <section className="py-20 px-6">
       <div className="container mx-auto">
-        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-12 text-center max-w-4xl mx-auto shadow-lg">
-          <blockquote className="text-2xl md:text-3xl font-medium text-white mb-8 leading-relaxed">
+        <div className="glass-card rounded-2xl p-12 text-center max-w-4xl mx-auto shadow-lg">
+          <blockquote className="text-2xl md:text-3xl font-medium text-white mb-8 leading-relaxed inter-font">
             "AutoReply saves me hours every week. It's like having a smart assistant in my inbox."
           </blockquote>
           
@@ -13,8 +13,8 @@ export const Testimonials = () => {
               <span className="text-white font-semibold">JD</span>
             </div>
             <div className="text-left">
-              <div className="text-white font-semibold">Jordan Davis</div>
-              <div className="text-white/70">Freelance Developer</div>
+              <div className="text-white font-semibold inter-font">Jordan Davis</div>
+              <div className="text-white/70 inter-font">Freelance Developer</div>
             </div>
           </div>
         </div>
