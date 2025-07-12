@@ -1,12 +1,13 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Eye, EyeOff, Mail, User, Lock, Check, X, UserPlus, Shield } from "lucide-react";
+import { Eye, EyeOff, Mail, User, Lock, Check, X, UserPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { AuroraBackground } from "@/components/AuroraBackground";
+import VantaNetBackground from "@/components/VantaNetBackground";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -70,7 +71,7 @@ const SignUp = () => {
     if (validateForm()) {
       toast({
         title: "Account created successfully!",
-        description: "Welcome to Aurora AI Platform"
+        description: "Welcome to AutoReply Platform"
       });
     }
   };
@@ -94,19 +95,19 @@ const SignUp = () => {
           <div className="absolute inset-[-1px] bg-gradient-to-br from-neutral-500 via-transparent to-neutral-600 rounded-xl z-[-1]"></div>
           
           <div className="bg-neutral-900 rounded-xl overflow-hidden shadow-lg backdrop-blur-sm">
-            {/* Visual Header Section */}
+            {/* Visual Header Section with Vanta Animation */}
             <div className="h-[150px] relative bg-neutral-800 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-transparent"></div>
+              <VantaNetBackground />
               <div className="absolute top-4 left-4 z-10">
                 <span className="px-2 py-1 bg-neutral-800/80 rounded-full text-xs text-neutral-400 mb-2 inline-block font-medium tracking-wide">
                   NEW ACCOUNT
                 </span>
-                <h2 className="text-2xl font-bold text-white inter-font">Join Aurora</h2>
+                <h2 className="text-2xl font-bold text-white inter-font">Join AutoReply</h2>
                 <div className="h-1 w-12 bg-neutral-400 mt-2 rounded-full"></div>
               </div>
               
               {/* Aurora branding element */}
-              <div className="absolute top-4 right-4">
+              <div className="absolute top-4 right-4 z-10">
                 <div className="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
                   <div className="w-4 h-4 rounded-sm bg-gradient-to-br from-blue-400 to-purple-500"></div>
                 </div>
@@ -259,23 +260,15 @@ const SignUp = () => {
                   </div>
                 </form>
 
-                {/* Action Buttons */}
-                <div className="flex space-x-3 mb-6">
+                {/* Action Button - Full Width */}
+                <div className="mb-6">
                   <Button
                     type="submit"
                     onClick={handleSubmit}
-                    className="flex-1 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 font-medium text-sm py-2.5"
+                    className="w-full bg-neutral-800 hover:bg-neutral-700 text-neutral-200 font-medium text-sm py-2.5"
                   >
                     <UserPlus className="h-4 w-4 mr-2" />
                     Create Account
-                  </Button>
-                  <Button
-                    type="button"
-                    onClick={() => handleSocialLogin("SSO")}
-                    className="flex-1 bg-black hover:bg-neutral-800 text-neutral-300 font-medium text-sm py-2.5"
-                  >
-                    <Shield className="h-4 w-4 mr-2" />
-                    SSO Signup
                   </Button>
                 </div>
 
